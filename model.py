@@ -41,6 +41,7 @@ class Simulation(Model):
         self.active_ratio = params.get('active_ratio')
         self.immunity_chance = params.get('immunity_chance')
         self.quarantine_rate = params.get('quarantine_rate')
+        self.lockdown_rate = params.get('lockdown_rate')
         
         self.running = True
         self.current_cycle = 0
@@ -50,8 +51,8 @@ class Simulation(Model):
             a = Person(i, self)
             if self.random.random() < self.start_infected:
                 a.set_infected()
-            if self.random.random() < self.quarantine_rate:
-                a.set_quarantine()
+            if self.random.random() < self.lockdown_rate:
+                a.set_lockdown()
             self.schedule.add(a)
             # Add the agent to a random grid cell
             x = self.random.randrange(self.grid.width)

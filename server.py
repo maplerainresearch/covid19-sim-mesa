@@ -34,8 +34,8 @@ grid = CanvasGrid(
     agent_portrayal,
     sim_params.get('grid_x'),
     sim_params.get('grid_y'),
-    sim_params.get('grid_x') * 5,
-    sim_params.get('grid_y') * 5)
+    sim_params.get('grid_x') * 4,
+    sim_params.get('grid_y') * 4)
 chart = ChartModule([{"Label": "Infected",
                       "Color": "Red"},
                      {"Label": "Immune",
